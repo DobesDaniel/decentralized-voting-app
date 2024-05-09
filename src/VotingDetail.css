@@ -1,0 +1,34 @@
+.voting-detail {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #39393A;
+}
+
+.options-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 160px);
+  gap: 10px;
+  justify-content: center;
+}
+
+.option-block {
+  width: 150px;
+  height: 120px;
+  border: 3px solid #297373;
+  cursor: pointer;
+  position: relative;
+  border-radius: 0px;
+}
+
+.option-block:hover {
+  background-color: #F5F5F5;
+}
+
+.option-block.selected {
+  background-color: #B5E3E3;
+
+}
+
+.vote-count {
+  color:#297373;
+}
