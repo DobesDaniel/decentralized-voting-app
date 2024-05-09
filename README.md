@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# BDM project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Project for class: Blockchain and digital currencies. Using Smart Contracts on the Sepolia test network.
 
-## Available Scripts
+# Deployment:
+- **Author:** Daniel Dobeš
+- **Deployment:** [decentralized-voting-app](https://dobesdaniel.github.io/decentralized-voting-app/)
 
-In the project directory, you can run:
+MetaMask extention needed!!!
 
-### `npm start`
+# Expectations:
+    - Any user is able to create "Voting"
+    - Voting has "title", "options", "start", "timelimit"
+    - Modes for voting by other users that is defined when creating:
+        1. One user has only one vote
+        2. One user has set amount of votes that can be assigned
+        3. One user has set amount of possitive votes and negative votes
+    - Voting contract has set time limit during other users can vote
+    - After time limit ends noone can vote anymore
+    - There is no list of who can vote when contract is created
+    - Each Voting is distinct by different ID
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# How it should work
+    - There is one contract that has all Votings (these could be struct)
+    - There should be function that returns all Votings, that is called when user loads website and connects metamask
+        - could take param users address or something to confirm
+    - When user is connected and all Votings are return they are displayed in gallery/grid/table style (title)
+        - by clicking on some Voting: new more detailed view is shown to user that is showing options and button to vote
+        - probably function getVoting() that returns details
+    - view is based on voting mode and button probably calls different function based on the voting
+    - user can vote only once per Voting, but can still view that Voting
+    - on main page where all votings are displayed there is a way to create new Voting
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Front-end
+    - Loading screen - and connecting using metamask to login
+    - When login - show all votings in galery/grid/table style (function getVotings())
+    - By clicking on any voting detail is shown which allows to vote (function vote())
 
-### `npm test`
+# Login
+    - basically to switch accounts switch account in metamask and f5
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# TODO:
+## Primary
+    - css designs
+    - what is actually displayed? ()
+    - "loading" after pressing button to create cotract and awaiting for its creation
+    - votings block colors based on upcomming | ongoing | finished in voting grid
+    - alignments
+    - set height for blocks?
+    - time format
+    - back button position?
+    - looks / colors
 
-### `npm run build`
+## Secondary
+    - different voting modes
+    - generate url for votings (or just easy way to get there)
+    - filter votings
+    - split votings based on finished | ongoing | upcomming
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Current State:
+  - Only 1 Voting Mode (1 vote per person)
+  - Any user is able to create "Voting"
+  - Voting has "title", "options", "start", "timelimit"
+  - MetaMask Extention needed!
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
